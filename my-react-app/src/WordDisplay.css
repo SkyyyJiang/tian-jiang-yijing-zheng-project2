@@ -1,0 +1,29 @@
+.correct {
+  color: white;
+  background-color: green;
+  border: 1px solid darkgreen;
+  display: inline-block;
+  margin: 2px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.misplaced {
+  color: white;
+  background-color: yellow;
+  border: 1px solid orange;
+  display: inline-block;
+  margin: 2px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.incorrect {
+  color: white;
+  background-color: gray;
+  border: 1px solid darkgray;
+  display: inline-block;
+  margin: 2px;
+  padding: 5px;
+  border-radius: 4px;
+}
