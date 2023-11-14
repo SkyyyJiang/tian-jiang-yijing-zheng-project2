@@ -90,7 +90,7 @@ class SevenLetterGame extends Component {
     this.setState({
       currentWord: newWord,
       difficulty: "hard",
-      attemptsLeft: 6,
+      attemptsLeft: 5,
       guesses: [],
       gameOver: false,
       message: "",
@@ -102,7 +102,7 @@ class SevenLetterGame extends Component {
       <>
         <Navbar />
         <div className="container">
-          {message && <div className="message">{message}</div>}
+          <div className="message">{message}</div>
           {!gameOver && (
             <div>
               <WordInput
