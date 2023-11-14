@@ -1,0 +1,13 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    font-size: 24px;
+}
+
+.select-buttons {
+    display: flex;
+    gap: 24px;
+}

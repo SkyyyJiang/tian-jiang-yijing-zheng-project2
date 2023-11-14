@@ -1,0 +1,70 @@
+nav input[type="checkbox"] {
+    appearance: none;
+}
+
+nav label {
+    display: none;
+    cursor: pointer;
+}
+
+nav {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgray;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: baseline;
+}
+
+nav li {
+    margin-left: 16px;
+    margin-right: 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-title {
+    display: inline;
+    align-items: center;
+    color: #6ca965;
+    font-size: 28px;
+    font-weight: 900;
+    padding-inline-start: 16px;
+}
+
+@media (max-width: 700px) {
+    nav label {
+        display: block;
+        font-size: 32px;
+        color: #6ca965;
+        padding-inline-end: 16px;
+    }
+
+    nav input[type="checkbox"]:checked ~ ul {
+        right: 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 100%;
+        background-color: lightgray;
+        gap: 16px;
+        top: 48px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-inline-start: 0;
+        margin-block-start: 10px;
+        margin-block-end: 0;
+    }
+}

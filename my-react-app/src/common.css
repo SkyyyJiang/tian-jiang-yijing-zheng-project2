@@ -1,0 +1,51 @@
+.button {
+  background-color: white;
+  border: 2px solid #787c7f;
+  border-radius: 800px;
+  color: #787c7f;
+  font-weight: bolder;
+  text-transform: capitalize;
+  padding: 8px 32px;
+  font-size: 24px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #787c7f;
+  color: white;
+}
+
+.button-small {
+  font-size: 16px;
+  padding: 4px 16px;
+}
+
+.clickable-text {
+  text-transform: capitalize;
+  color: #6ca965;
+  text-decoration: none;
+}
+
+.clickable-text:hover {
+  color: #c8b653;
+}
+
+.title {
+  font-size: 96px;
+  text-shadow: 8px 8px #c8b653;
+  color: #6ca965;
+  font-weight: 900;
+  text-align: center;
+  word-break: break-word;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  padding: 64px;
+}
+
+.spacing {
+  height: 32px;
+}
