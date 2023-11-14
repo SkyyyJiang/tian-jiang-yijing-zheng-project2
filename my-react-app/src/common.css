@@ -17,6 +17,7 @@
   }
   
   .clickable-text {
+    text-transform: capitalize;
     color: #6ca965;
     text-decoration: none;
   }
@@ -44,4 +45,10 @@
     font-weight: 900;
     text-align: center;
     word-break: break-word;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  padding: 64px;
 }

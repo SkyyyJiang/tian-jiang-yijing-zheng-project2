@@ -7,17 +7,6 @@ import Rule from "./Rule";
 import './App.css';
 import './common.css';
 
-/**
- * 10 words for each difficulty
- * add home page
- * add rule
- * change algorithm
- *  convert all input to upper cases
- *  duplicate letter
- * navbar
- * change url
- */
-
 function App() {
   return (
     <Router>
