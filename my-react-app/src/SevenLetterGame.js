@@ -87,11 +87,25 @@ class SevenLetterGame extends Component {
       });
     }
   };
-
+  resetGame = () => {
+    const newWord = this.getRandomWord(this.state.difficulty);
+    this.setState({
+      currentWord: newWord,
+      difficulty: "hard",
+      attemptsLeft: 6,
+      guesses: [],
+      gameOver: false,
+      gameWon: false,
+      message: "",
+    });
+  };
   render() {
     const { guesses, attemptsLeft, gameOver, message } = this.state;
     return (
       <div>
+        <button onClick={this.resetGame} className="reset-button">
+          Play Again
+        </button>
         {message && <div className="message">{message}</div>}
         {!gameOver && (
           <div>

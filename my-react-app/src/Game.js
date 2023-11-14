@@ -90,11 +90,26 @@ class Game extends Component {
       });
     }
   };
+  resetGame = () => {
+    const newWord = this.getRandomWord(this.state.difficulty);
+    this.setState({
+      currentWord: newWord,
+      difficulty: "normal",
+      attemptsLeft: 6,
+      guesses: [],
+      gameOver: false,
+      gameWon: false,
+      message: "",
+    });
+  };
 
   render() {
     const { guesses, attemptsLeft, gameOver, gameWon, message } = this.state;
     return (
       <div className="game-container">
+        <button onClick={this.resetGame} className="reset-button">
+          Play Again
+        </button>
         {message && <div className="message">{message}</div>}
         {!gameOver ? (
           <div>
@@ -120,6 +135,7 @@ class Game extends Component {
             currentWord={this.state.currentWord}
           />
         ))}
+
         <Link to="/seven-letter-game">
           <button>Play 7-Letter Word Game</button>
         </Link>
