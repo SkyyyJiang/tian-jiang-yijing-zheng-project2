@@ -7,7 +7,8 @@ class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentWord: "Fellow",
+      currentWord: "",
+      difficulty: "normal",
       attemptsLeft: 6,
       guesses: [],
       gameOver: false,
@@ -15,6 +16,46 @@ class Game extends Component {
       message: "",
     };
   }
+
+  componentDidMount() {
+    this.startNewGame();
+  }
+
+  getRandomWord = (difficulty) => {
+    const words = {
+      normal: [
+        "puzzle",
+        "jungle",
+        "guitar",
+        "factor",
+        "galaxy",
+        "habits",
+        "hamlet",
+        "infect",
+        "spread",
+        "jokers",
+      ],
+    };
+    const wordsByDifficulty = words[difficulty];
+    if (!wordsByDifficulty || wordsByDifficulty.length === 0) {
+      console.error(`No words found for difficulty: ${difficulty}`);
+      return "";
+    }
+    const randomIndex = Math.floor(Math.random() * wordsByDifficulty.length);
+    return wordsByDifficulty[randomIndex];
+  };
+
+  startNewGame = () => {
+    const newWord = this.getRandomWord(this.state.difficulty);
+    this.setState({
+      currentWord: newWord,
+      attemptsLeft: 6,
+      guesses: [],
+      gameOver: false,
+      gameWon: false,
+      message: "",
+    });
+  };
 
   handleGuess = (guess) => {
     if (guess.length !== this.state.currentWord.length) {
@@ -82,7 +123,6 @@ class Game extends Component {
         <Link to="/seven-letter-game">
           <button>Play 7-Letter Word Game</button>
         </Link>
-        ;
       </div>
     );
   }
