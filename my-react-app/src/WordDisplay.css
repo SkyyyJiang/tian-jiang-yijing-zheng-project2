@@ -1,29 +1,20 @@
-.correct {
+.correct, .misplaced, .incorrect {
   color: white;
-  background-color: green;
-  border: 1px solid darkgreen;
+  background-color: #6ca965;
   display: inline-block;
   margin: 2px;
   padding: 5px;
   border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 24px;
 }
 
 .misplaced {
-  color: white;
-  background-color: yellow;
-  border: 1px solid orange;
-  display: inline-block;
-  margin: 2px;
-  padding: 5px;
-  border-radius: 4px;
+  background-color: #c8b653;
 }
 
 .incorrect {
-  color: white;
-  background-color: gray;
-  border: 1px solid darkgray;
-  display: inline-block;
-  margin: 2px;
-  padding: 5px;
-  border-radius: 4px;
+  background-color: #787c7f;
 }

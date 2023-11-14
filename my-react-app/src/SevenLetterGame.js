@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import WordInput from "./WordInput";
 import WordDisplay from "./WordDisplay";
+import Navbar from './Navbar';
 
 class SevenLetterGame extends Component {
   constructor(props) {
@@ -11,7 +12,6 @@ class SevenLetterGame extends Component {
       attemptsLeft: 5,
       guesses: [],
       gameOver: false,
-      gameWon: false,
       message: "",
     };
   }
@@ -50,7 +50,6 @@ class SevenLetterGame extends Component {
       attemptsLeft: 5,
       guesses: [],
       gameOver: false,
-      gameWon: false,
       message: "",
     });
   };
@@ -76,14 +75,13 @@ class SevenLetterGame extends Component {
 
     if (lastGuess === currentWord) {
       this.setState({
-        gameWon: true,
         gameOver: true,
-        message: 'Congratulations! You guessed the word "Exactly"!',
+        message: "Congratulations! Would you like to try again?",
       });
     } else if (attemptsLeft <= 0) {
       this.setState({
         gameOver: true,
-        message: `Game Over. The word was "Exactly".`,
+        message: `Game Over. The word was ${currentWord}`,
       });
     }
   };
@@ -95,35 +93,39 @@ class SevenLetterGame extends Component {
       attemptsLeft: 6,
       guesses: [],
       gameOver: false,
-      gameWon: false,
       message: "",
     });
   };
   render() {
     const { guesses, attemptsLeft, gameOver, message } = this.state;
     return (
-      <div>
-        <button onClick={this.resetGame} className="reset-button">
-          Play Again
-        </button>
-        {message && <div className="message">{message}</div>}
-        {!gameOver && (
-          <div>
-            <WordInput
-              onGuess={this.handleGuess}
-              wordLength={this.state.currentWord.length}
+      <>
+        <Navbar />
+        <div className="container">
+          {message && <div className="message">{message}</div>}
+          {!gameOver && (
+            <div>
+              <WordInput
+                onGuess={this.handleGuess}
+                wordLength={this.state.currentWord.length}
+              />
+              <div className="spacing"/>
+              <div>Attempts Left: {attemptsLeft}</div>
+            </div>
+          )}
+          {guesses.map((guess, index) => (
+            <WordDisplay
+              key={index}
+              guess={guess}
+              currentWord={this.state.currentWord}
             />
-            <div>Attempts Left: {attemptsLeft}</div>
-          </div>
-        )}
-        {guesses.map((guess, index) => (
-          <WordDisplay
-            key={index}
-            guess={guess}
-            currentWord={this.state.currentWord}
-          />
-        ))}
-      </div>
+          ))}
+          <div className="spacing"/>
+          <button onClick={this.resetGame} className="button button-small">
+            Play Again
+          </button>
+        </div>
+      </>
     );
   }
 }

@@ -1,0 +1,12 @@
+input[type="text"] {
+    font-size: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 32px;
+}

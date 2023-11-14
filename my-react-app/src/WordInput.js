@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './WordInput.css'
 
 class WordInput extends Component {
   constructor(props) {
@@ -18,13 +19,13 @@ class WordInput extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="input-container">
         <input
           type="text"
           value={this.state.input}
           onChange={this.handleChange}
         />
-        <button type="submit">Guess</button>
+        <button type="submit" className="button button-small">Guess</button>
       </form>
     );
   }
